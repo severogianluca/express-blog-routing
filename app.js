@@ -1,12 +1,12 @@
 const express = require('express');
+
+const app = express();
+const port = 3500;
 const homeRouter = require('./routers/posts')
 
-const app = express ();
-const port = 3000;
 
-app.use(express.static('public'))
 app.use("/posts", homeRouter)
-
+app.use(express.static('public'))
 
 app.get('/', (req, res) => {
     console.log('sei dentro la homepage')
